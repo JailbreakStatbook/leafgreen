@@ -3,26 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pokémon LeafGreen — Complete Story Guide</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+<title>Pokémon HeartGold/SoulSilver — Complete Story Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --green: #3a7d44;
-    --green-light: #52b069;
-    --green-dark: #1e4d28;
-    --leaf: #7ec850;
-    --gold: #f5c842;
-    --poke-red: #e63946;
-    --dark: #0d1f0f;
-    --card: #122714;
-    --card2: #1a3320;
-    --text: #d4f0da;
-    --muted: #7aad82;
-    --border: #2e5c35;
+    --gold: #d4a017;
+    --gold-light: #f5c842;
+    --gold-dark: #8a6500;
+    --silver: #a0b4c8;
+    --silver-light: #cde0f0;
+    --dark: #0a0f1a;
+    --card: #101828;
+    --card2: #162033;
+    --text: #e8f0ff;
+    --muted: #6a88aa;
+    --border: #1e3050;
     --rare: #9b59b6;
     --uncommon: #3498db;
-    --common: #27ae60;
-    --starter: #f39c12;
+    --common: #2ecc71;
+    --starter: #e67e22;
+    --legendary: #f5c842;
+    --poke-red: #e63946;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,77 +34,80 @@
     font-family: 'Nunito', sans-serif;
     min-height: 100vh;
     background-image:
-      radial-gradient(ellipse at 20% 0%, rgba(58,125,68,0.18) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 100%, rgba(30,77,40,0.22) 0%, transparent 60%),
-      url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='rgba(126,200,80,0.04)'/%3E%3C/svg%3E");
+      radial-gradient(ellipse at 15% 0%, rgba(212,160,23,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 100%, rgba(160,180,200,0.1) 0%, transparent 55%);
   }
 
   header {
     text-align: center;
     padding: 3rem 1rem 2rem;
-    position: relative;
     border-bottom: 2px solid var(--border);
-    background: linear-gradient(180deg, rgba(30,77,40,0.6) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(20,35,60,0.9) 0%, transparent 100%);
+    position: relative;
+    overflow: hidden;
   }
 
-  .pokeball-bg {
+  header::before {
+    content: '';
     position: absolute;
-    top: -40px; left: 50%;
+    top: -60px; left: 50%;
     transform: translateX(-50%);
-    width: 220px; height: 220px;
+    width: 300px; height: 300px;
     border-radius: 50%;
-    background: conic-gradient(var(--green-dark) 0deg 180deg, var(--dark) 180deg 360deg);
-    border: 4px solid var(--border);
-    opacity: 0.13;
+    background: conic-gradient(var(--gold-dark) 0deg 180deg, var(--dark) 180deg 360deg);
+    opacity: 0.08;
     z-index: 0;
   }
 
   header h1 {
     font-family: 'Press Start 2P', monospace;
-    font-size: clamp(0.85rem, 2.5vw, 1.3rem);
-    color: var(--leaf);
-    text-shadow: 0 0 18px rgba(126,200,80,0.5), 2px 2px 0 var(--green-dark);
+    font-size: clamp(0.75rem, 2.2vw, 1.15rem);
+    color: var(--gold-light);
+    text-shadow: 0 0 20px rgba(245,200,66,0.45), 2px 2px 0 #3a2a00;
     position: relative;
     z-index: 1;
-    line-height: 1.7;
-    letter-spacing: 1px;
+    line-height: 1.8;
   }
 
   header p {
     font-family: 'VT323', monospace;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     color: var(--muted);
-    margin-top: 0.6rem;
-    position: relative;
-    z-index: 1;
+    margin-top: 0.5rem;
+    position: relative; z-index: 1;
   }
 
   .badge-strip {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     flex-wrap: wrap;
     margin-top: 1.2rem;
-    position: relative;
-    z-index: 1;
+    position: relative; z-index: 1;
   }
 
   .badge-chip {
     font-family: 'Press Start 2P', monospace;
-    font-size: 0.42rem;
-    padding: 0.35rem 0.7rem;
+    font-size: 0.38rem;
+    padding: 0.3rem 0.6rem;
     border-radius: 4px;
     border: 1px solid var(--border);
     background: var(--card);
-    color: var(--gold);
-    letter-spacing: 0.5px;
+    color: var(--gold-light);
   }
 
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 2rem 1rem 4rem;
+  .region-label {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.5rem;
+    color: var(--silver);
+    background: rgba(160,180,200,0.08);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.3rem 0.7rem;
+    margin: 0 0.3rem;
   }
+
+  main { max-width: 880px; margin: 0 auto; padding: 2rem 1rem 4rem; }
 
   .legend {
     display: flex;
@@ -119,18 +123,9 @@
 
   .legend-title {
     font-family: 'Press Start 2P', monospace;
-    font-size: 0.5rem;
+    font-size: 0.45rem;
     color: var(--muted);
-    margin-right: 0.5rem;
-    text-transform: uppercase;
-  }
-
-  .dot {
-    display: inline-block;
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    margin-right: 5px;
-    flex-shrink: 0;
+    margin-right: 0.3rem;
   }
 
   .legend-item {
@@ -142,17 +137,44 @@
     gap: 5px;
   }
 
+  .dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .region-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 1.5rem;
+  }
+
+  .region-divider-line { flex: 1; height: 1px; background: var(--border); }
+
+  .region-divider-label {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    color: var(--gold-light);
+    white-space: nowrap;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--gold-dark);
+    border-radius: 20px;
+    background: rgba(212,160,23,0.08);
+  }
+
   .section {
-    margin-bottom: 2.2rem;
+    margin-bottom: 2rem;
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
     background: var(--card);
-    animation: fadeUp 0.4s ease both;
+    animation: fadeUp 0.35s ease both;
   }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
+    from { opacity: 0; transform: translateY(14px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
@@ -161,21 +183,16 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.4rem;
-    background: linear-gradient(90deg, var(--green-dark), var(--card2));
+    background: linear-gradient(90deg, rgba(20,35,60,0.95), var(--card2));
     border-bottom: 1px solid var(--border);
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.2s;
   }
-
-  .section-header:hover { background: linear-gradient(90deg, #2a5c30, var(--card2)); }
 
   .section-num {
     font-family: 'Press Start 2P', monospace;
-    font-size: 0.55rem;
-    color: var(--leaf);
-    background: rgba(126,200,80,0.12);
-    border: 1px solid var(--leaf);
+    font-size: 0.5rem;
+    color: var(--gold-light);
+    background: rgba(212,160,23,0.1);
+    border: 1px solid var(--gold-dark);
     border-radius: 4px;
     padding: 0.3rem 0.5rem;
     flex-shrink: 0;
@@ -183,75 +200,50 @@
 
   .section-title {
     font-family: 'Press Start 2P', monospace;
-    font-size: clamp(0.5rem, 1.6vw, 0.65rem);
-    color: var(--gold);
-    line-height: 1.6;
+    font-size: clamp(0.45rem, 1.4vw, 0.6rem);
+    color: var(--gold-light);
+    line-height: 1.7;
     flex: 1;
   }
 
-  .badge-img {
-    font-size: 1.4rem;
-    flex-shrink: 0;
-  }
+  .badge-img { font-size: 1.4rem; flex-shrink: 0; }
 
-  .section-body {
-    padding: 1.2rem 1.4rem;
-  }
+  .section-body { padding: 1.2rem 1.4rem; }
 
-  .steps {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-  }
+  .steps { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
 
   .step {
     display: flex;
     gap: 0.8rem;
     align-items: flex-start;
-    padding: 0.55rem 0.7rem;
+    padding: 0.5rem 0.7rem;
     border-radius: 6px;
-    background: rgba(255,255,255,0.025);
+    background: rgba(255,255,255,0.02);
     border-left: 3px solid var(--border);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.88rem;
+    line-height: 1.55;
     transition: border-color 0.2s, background 0.2s;
   }
 
-  .step:hover {
-    border-left-color: var(--leaf);
-    background: rgba(126,200,80,0.06);
-  }
-
+  .step:hover { border-left-color: var(--gold); background: rgba(212,160,23,0.05); }
   .step-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
 
-  .step.boss {
-    border-left-color: var(--poke-red);
-    background: rgba(230,57,70,0.07);
-  }
-
-  .step.key {
-    border-left-color: var(--gold);
-    background: rgba(245,200,66,0.06);
-  }
-
-  .step.hm {
-    border-left-color: #5dade2;
-    background: rgba(93,173,226,0.06);
-  }
+  .step.boss { border-left-color: var(--poke-red); background: rgba(230,57,70,0.06); }
+  .step.key { border-left-color: var(--gold-light); background: rgba(245,200,66,0.05); }
+  .step.hm { border-left-color: var(--silver); background: rgba(160,180,200,0.05); }
 
   .pokemon-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    gap: 0.6rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    gap: 0.55rem;
+    margin-top: 0.8rem;
   }
 
   .poke-card {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.55rem 0.8rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 7px;
     border: 1px solid var(--border);
     background: var(--card2);
@@ -260,38 +252,25 @@
     transition: transform 0.15s, border-color 0.15s;
   }
 
-  .poke-card:hover { transform: translateY(-2px); border-color: var(--leaf); }
-
+  .poke-card:hover { transform: translateY(-2px); border-color: var(--gold); }
   .poke-card.rare { border-color: var(--rare); }
   .poke-card.uncommon { border-color: var(--uncommon); }
   .poke-card.starter { border-color: var(--starter); }
-  .poke-card.legendary { border-color: var(--gold); background: rgba(245,200,66,0.08); }
+  .poke-card.legendary { border-color: var(--legendary); background: rgba(245,200,66,0.07); }
 
-  .poke-dot {
-    width: 9px; height: 9px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
+  .poke-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
   .rare .poke-dot { background: var(--rare); }
   .uncommon .poke-dot { background: var(--uncommon); }
   .poke-card:not(.rare):not(.uncommon):not(.starter):not(.legendary) .poke-dot { background: var(--common); }
   .starter .poke-dot { background: var(--starter); }
-  .legendary .poke-dot { background: var(--gold); }
+  .legendary .poke-dot { background: var(--legendary); }
 
-  .poke-name { color: var(--text); }
-
-  .poke-note {
-    font-size: 0.72rem;
-    color: var(--muted);
-    font-weight: 600;
-    margin-left: auto;
-    white-space: nowrap;
-  }
+  .poke-name { color: var(--text); flex: 1; }
+  .poke-note { font-size: 0.7rem; color: var(--muted); font-weight: 600; white-space: nowrap; }
 
   .poke-section-label {
     font-family: 'Press Start 2P', monospace;
-    font-size: 0.45rem;
+    font-size: 0.42rem;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -300,44 +279,31 @@
   }
 
   .gym-leader-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 0.8rem 1rem;
-    background: rgba(230,57,70,0.1);
-    border: 1px solid rgba(230,57,70,0.3);
+    padding: 0.75rem 1rem;
+    background: rgba(230,57,70,0.09);
+    border: 1px solid rgba(230,57,70,0.28);
     border-radius: 8px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.85rem;
   }
 
   .gym-leader-bar .name {
     font-family: 'Press Start 2P', monospace;
-    font-size: 0.5rem;
+    font-size: 0.48rem;
     color: var(--poke-red);
+    margin-bottom: 0.3rem;
   }
 
-  .gym-leader-bar .info {
-    font-size: 0.8rem;
-    color: var(--muted);
-  }
+  .gym-leader-bar .info { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
 
   .tip-box {
-    background: rgba(245,200,66,0.07);
-    border: 1px solid rgba(245,200,66,0.3);
+    background: rgba(245,200,66,0.06);
+    border: 1px solid rgba(245,200,66,0.25);
     border-radius: 7px;
     padding: 0.7rem 1rem;
     font-size: 0.85rem;
-    color: var(--gold);
-    margin-top: 0.8rem;
-    line-height: 1.5;
-  }
-
-  .tip-box strong { color: var(--gold); }
-
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 1rem 0;
+    color: var(--gold-light);
+    margin-top: 0.9rem;
+    line-height: 1.55;
   }
 
   footer {
@@ -351,17 +317,25 @@
 
   @media (max-width: 600px) {
     .pokemon-grid { grid-template-columns: 1fr 1fr; }
-    .section-header { flex-wrap: wrap; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="pokeball-bg"></div>
-  <h1>POKÉMON LEAFGREEN<br>COMPLETE STORY GUIDE</h1>
-  <p>Every step · Key Pokémon · Boss tips</p>
+  <h1>POKÉMON HEARTGOLD / SOULSILVER<br>COMPLETE STORY GUIDE</h1>
+  <p>Johto + Kanto · Every step · Key Pokémon · Boss tips</p>
   <div class="badge-strip">
+    <span class="region-label">JOHTO</span>
+    <div class="badge-chip">ZEPHYR</div>
+    <div class="badge-chip">HIVE</div>
+    <div class="badge-chip">PLAIN</div>
+    <div class="badge-chip">FOG</div>
+    <div class="badge-chip">STORM</div>
+    <div class="badge-chip">MINERAL</div>
+    <div class="badge-chip">GLACIER</div>
+    <div class="badge-chip">RISING</div>
+    <span class="region-label">KANTO</span>
     <div class="badge-chip">BOULDER</div>
     <div class="badge-chip">CASCADE</div>
     <div class="badge-chip">THUNDER</div>
@@ -381,411 +355,422 @@
     <span class="legend-item"><span class="dot" style="background:var(--uncommon)"></span>Uncommon</span>
     <span class="legend-item"><span class="dot" style="background:var(--rare)"></span>Rare</span>
     <span class="legend-item"><span class="dot" style="background:var(--starter)"></span>Starter/Gift</span>
-    <span class="legend-item"><span class="dot" style="background:var(--gold)"></span>Legendary</span>
+    <span class="legend-item"><span class="dot" style="background:var(--legendary)"></span>Legendary</span>
   </div>
 
-  <!-- SECTION 1 -->
+  <div class="region-divider">
+    <div class="region-divider-line"></div>
+    <div class="region-divider-label">⚪ JOHTO REGION</div>
+    <div class="region-divider-line"></div>
+  </div>
+
+  <!-- 1 -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">01</span>
-      <span class="section-title">PALLET TOWN — THE BEGINNING</span>
+      <span class="section-title">NEW BARK TOWN — THE BEGINNING</span>
       <span class="badge-img">🏠</span>
     </div>
     <div class="section-body">
       <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>Name your character and rival (Gary). Your rival's name defaults to "Gary" or "Blue" canonically.</li>
-        <li class="step"><span class="step-icon">▶</span>Attempt to leave town north — Professor Oak stops you and takes you to his lab.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Choose your starter Pokémon from Oak's desk. Your choice determines your rival's counter-pick.</li>
-        <li class="step"><span class="step-icon">▶</span>Rival immediately challenges you to your first battle — win or lose, it doesn't affect the story.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Receive the Pokédex from Oak. Your adventure officially begins.</li>
+        <li class="step"><span class="step-icon">▶</span>Name your character. Professor Elm calls you to his lab in New Bark Town.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Choose your starter from Elm's lab: Chikorita (Grass), Cyndaquil (Fire), or Totodile (Water).</li>
+        <li class="step"><span class="step-icon">▶</span>Elm asks you to deliver an egg to Mr. Pokémon on Route 30. Head north through Route 29.</li>
+        <li class="step"><span class="step-icon">▶</span>A red-haired kid (your rival, Silver) steals a starter from Elm's lab — you'll fight him shortly.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Reach Mr. Pokémon's house on Route 30. He gives you the Mystery Egg and you meet Professor Oak, who gives you the Pokédex.</li>
+        <li class="step boss"><span class="step-icon">🔴</span>Rival battle on Route 29 on the way back. Beat him and note his name from a wanted poster.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Return the egg to Elm — he gives you 5 Poké Balls and unlocks your journey.</li>
       </ul>
       <div class="poke-section-label">🎮 Starter Choice</div>
       <div class="pokemon-grid">
-        <div class="poke-card starter"><span class="poke-dot"></span><span class="poke-name">Bulbasaur</span><span class="poke-note">Easiest early</span></div>
-        <div class="poke-card starter"><span class="poke-dot"></span><span class="poke-name">Charmander</span><span class="poke-note">Hard early</span></div>
-        <div class="poke-card starter"><span class="poke-dot"></span><span class="poke-name">Squirtle</span><span class="poke-note">Balanced</span></div>
+        <div class="poke-card starter"><span class="poke-dot"></span><span class="poke-name">Chikorita</span><span class="poke-note">Hard mode</span></div>
+        <div class="poke-card starter"><span class="poke-dot"></span><span class="poke-name">Cyndaquil</span><span class="poke-note">Easiest overall</span></div>
+        <div class="poke-card starter"><span class="poke-dot"></span><span class="poke-name">Totodile</span><span class="poke-note">Balanced</span></div>
       </div>
-      <div class="tip-box">💡 <strong>Bulbasaur</strong> trivializes gyms 1 & 2. <strong>Charmander</strong> makes early gyms rough but dominates mid-game.</div>
+      <div class="tip-box">💡 With Totodile, you'll struggle slightly vs. Falkner (Flying) but dominate gyms 2, 7, and 8. Feraligatr is one of the strongest fully-evolved starters in the game.</div>
     </div>
   </div>
 
-  <!-- SECTION 2 -->
+  <!-- 2 -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">02</span>
-      <span class="section-title">ROUTE 1 → VIRIDIAN CITY → ROUTE 2</span>
-      <span class="badge-img">🌿</span>
+      <span class="section-title">VIOLET CITY — GYM 1: FALKNER</span>
+      <span class="badge-img">🪶</span>
     </div>
     <div class="section-body">
-      <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>Walk north through Route 1. Grind if needed — wild Rattata and Pidgey give decent early XP.</li>
-        <li class="step"><span class="step-icon">▶</span>Reach Viridian City. The Poké Mart won't sell to you yet — deliver Oak's Parcel first.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Return to Pallet Town, deliver the parcel to Oak. Receive the Town Map from your rival's sister.</li>
-        <li class="step"><span class="step-icon">▶</span>Head back to Viridian City. The Gym is locked for now — skip it.</li>
-        <li class="step"><span class="step-icon">▶</span>Pass through Viridian Forest on Route 2. The forest has your first Bug-type encounters.</li>
-      </ul>
-      <div class="poke-section-label">🎯 Watch For</div>
-      <div class="pokemon-grid">
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Rattata</span><span class="poke-note">R1</span></div>
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Pidgey</span><span class="poke-note">R1/R2</span></div>
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Caterpie</span><span class="poke-note">Forest</span></div>
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Weedle</span><span class="poke-note">Forest</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Pikachu</span><span class="poke-note">Forest</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Metapod</span><span class="poke-note">Forest</span></div>
+      <div class="gym-leader-bar">
+        <div class="name">FALKNER — ZEPHYR BADGE</div>
+        <div class="info">Flying type · Pidgey Lv9 · Pidgeotto Lv13</div>
       </div>
+      <ul class="steps">
+        <li class="step"><span class="step-icon">▶</span>Head west through Routes 29 and 46, then north through Routes 36 and 32 (or directly via Route 31 to Violet City).</li>
+        <li class="step"><span class="step-icon">▶</span>Visit Sprout Tower north of Violet City for XP and to find HM05 Flash at the top. Rival Silver is also here.</li>
+        <li class="step boss"><span class="step-icon">🔴</span>Beat Falkner. Rock and Electric moves are ideal. Totodile users: grind to Lv15+ before this fight.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Zephyr Badge + TM51 (Roost). The Mystery Egg hatches into <strong>Togepi</strong> after enough steps — pick it up from Elm's assistant.</li>
+      </ul>
+      <div class="poke-section-label">🎯 Catch on Routes 29–31</div>
+      <div class="pokemon-grid">
+        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Sentret</span><span class="poke-note">R29</span></div>
+        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Pidgey</span><span class="poke-note">R29/30</span></div>
+        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Hoothoot</span><span class="poke-note">R29 (night)</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Togepi</span><span class="poke-note">Egg from Elm</span></div>
+        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Bellsprout</span><span class="poke-note">R31</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Mareep</span><span class="poke-note">R32 ★</span></div>
+      </div>
+      <div class="tip-box">💡 <strong>Mareep</strong> on Route 32 is a fantastic early Electric-type. It evolves into Ampharos, one of Johto's best Pokémon. Don't skip it.</div>
     </div>
   </div>
 
-  <!-- SECTION 3 -->
+  <!-- 3 -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">03</span>
-      <span class="section-title">PEWTER CITY — GYM 1: BROCK</span>
-      <span class="badge-img">🪨</span>
+      <span class="section-title">AZALEA TOWN — SLOWPOKE WELL + GYM 2: BUGSY</span>
+      <span class="badge-img">🐛</span>
     </div>
     <div class="section-body">
       <div class="gym-leader-bar">
-        <div>
-          <div class="name">BROCK — BOULDER BADGE</div>
-          <div class="info">Rock/Ground type · Geodude Lv12 · Onix Lv14</div>
-        </div>
+        <div class="name">BUGSY — HIVE BADGE</div>
+        <div class="info">Bug type · Metapod Lv14 · Kakuna Lv14 · Scyther Lv16</div>
       </div>
       <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>Visit the Pewter Museum of Science (north of town) for lore, but it's optional.</li>
-        <li class="step boss"><span class="step-icon">🔴</span>Challenge Brock. Grass and Water moves wreck him. Charmander users: grind Mankey on Route 22 for Low Kick.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Earn Boulder Badge + TM39 (Rock Tomb). Flash HM can now be used outside battle.</li>
+        <li class="step"><span class="step-icon">▶</span>Head south through Route 32 (catch Mareep!) and through Union Cave to reach Azalea Town.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Team Rocket is cutting Slowpoke tails in Slowpoke Well. Clear them out to unlock the gym.</li>
+        <li class="step boss"><span class="step-icon">🔴</span>Rival battle outside the gym after clearing the Well. Then beat Bugsy — Fire and Flying wreck him. Watch out for Scyther's U-turn.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Hive Badge + TM89 (U-turn). Head east through Ilex Forest next.</li>
+        <li class="step hm"><span class="step-icon">💧</span>Help the Charcoal Man's apprentice in Ilex Forest to receive <strong>HM01 Cut</strong>.</li>
       </ul>
-      <div class="poke-section-label">🎯 Key Pokémon — Mt. Moon (coming up)</div>
+      <div class="poke-section-label">🎯 Key Catches — Union Cave & Ilex Forest</div>
       <div class="pokemon-grid">
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Geodude</span><span class="poke-note">Mt. Moon</span></div>
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Clefairy</span><span class="poke-note">Mt. Moon ★</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Jigglypuff</span><span class="poke-note">R3</span></div>
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Paras</span><span class="poke-note">Mt. Moon</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Clefable</span><span class="poke-note">Evolve</span></div>
+        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Zubat</span><span class="poke-note">Union Cave</span></div>
+        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Onix</span><span class="poke-note">Union Cave</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Lapras</span><span class="poke-note">Union Cave Fri ★</span></div>
+        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Paras</span><span class="poke-note">Ilex Forest</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Oddish</span><span class="poke-note">Ilex Forest</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Psyduck</span><span class="poke-note">R33 (surf)</span></div>
       </div>
-      <div class="tip-box">💡 Clefairy is rare in Mt. Moon but worth catching — evolves into the very useful Clefable. Also, Team Rocket appears in Mt. Moon for the first time.</div>
+      <div class="tip-box">💡 <strong>Lapras</strong> appears in Union Cave only on Fridays — worth the wait. It's one of the best Water/Ice types in the game and perfect for a Totodile-free slot.</div>
     </div>
   </div>
 
-  <!-- SECTION 4 -->
+  <!-- 4 -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">04</span>
-      <span class="section-title">CERULEAN CITY — GYM 2: MISTY</span>
-      <span class="badge-img">💧</span>
+      <span class="section-title">GOLDENROD CITY — GYM 3: WHITNEY</span>
+      <span class="badge-img">🌸</span>
     </div>
     <div class="section-body">
       <div class="gym-leader-bar">
-        <div>
-          <div class="name">MISTY — CASCADE BADGE</div>
-          <div class="info">Water type · Staryu Lv18 · Starmie Lv21</div>
-        </div>
+        <div class="name">WHITNEY — PLAIN BADGE</div>
+        <div class="info">Normal type · Clefairy Lv17 · Miltank Lv19</div>
       </div>
       <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>After arriving, go north to Nugget Bridge on Route 24. Battle 5 trainers for a Nugget (sell for cash), then face a Team Rocket grunt.</li>
-        <li class="step key"><span class="step-icon">⭐</span>On Route 25 (past Bill's house), Bill will be in a transporter — help him revert. He gives you an <strong>SS Ticket</strong> (needed later).</li>
-        <li class="step boss"><span class="step-icon">🔴</span>Beat Misty. Grass and Electric types are key. Starmie hits hard — be at least Lv25.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Cascade Badge + TM03 (Water Pulse). Cut HM can now be used outside.</li>
+        <li class="step"><span class="step-icon">▶</span>Pass through Ilex Forest and north through Routes 34 to Goldenrod City.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Goldenrod has a massive Department Store — stock up on items, TMs, and evolution stones.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Get the Bicycle for free from the Bike Shop (just promise to advertise for them).</li>
+        <li class="step boss"><span class="step-icon">🔴</span>Beat Whitney. Miltank's Rollout + Milk Drink is infamous — bring a Rock or Steel type and chip it down fast. Fighting moves are super effective.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Plain Badge + TM45 (Attract). Whitney cries then gives you the badge after a moment.</li>
+        <li class="step key"><span class="step-icon">⭐</span>National Park is nearby (Route 35/36) — Bug-Catching Contest runs Tuesday, Thursday, Saturday. Great for rare Pokémon.</li>
       </ul>
-      <div class="poke-section-label">🎯 Catch Near Cerulean</div>
+      <div class="poke-section-label">🎯 Key Catches — Route 34 & National Park</div>
       <div class="pokemon-grid">
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Oddish</span><span class="poke-note">R24/25</span></div>
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Bellsprout</span><span class="poke-note">R24/25</span></div>
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Abra</span><span class="poke-note">R24 ★</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Kadabra</span><span class="poke-note">Evolve Abra</span></div>
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Magikarp</span><span class="poke-note">Fishing</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Psyduck</span><span class="poke-note">Cerulean Cave later</span></div>
+        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Drowzee</span><span class="poke-note">R34</span></div>
+        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Ditto</span><span class="poke-note">R34/35 ★</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Scyther</span><span class="poke-note">Nat'l Park Bug Cont.</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Pinsir</span><span class="poke-note">Nat'l Park Bug Cont.</span></div>
+        <div class="poke-card starter"><span class="poke-dot"></span><span class="poke-name">Eevee</span><span class="poke-note">Gift: Goldenrod</span></div>
       </div>
-      <div class="tip-box">💡 Abra flees immediately — use a Poké Ball on your first turn or lead with a Pokémon that has a sleeping/paralysis move. It evolves into the powerhouse Alakazam (trade to evolve).</div>
+      <div class="tip-box">💡 Bill gives you a free <strong>Eevee</strong> in Goldenrod City. Decide your Eeveelution before evolving — Espeon and Umbreon require high friendship and time-of-day; others need Stones from the Department Store.</div>
     </div>
   </div>
 
-  <!-- SECTION 5 -->
+  <!-- 5 -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">05</span>
-      <span class="section-title">VERMILION CITY — SS ANNE + GYM 3: LT. SURGE</span>
-      <span class="badge-img">⚡</span>
-    </div>
-    <div class="section-body">
-      <div class="gym-leader-bar">
-        <div>
-          <div class="name">LT. SURGE — THUNDER BADGE</div>
-          <div class="info">Electric type · Voltorb Lv21 · Pikachu Lv18 · Raichu Lv24</div>
-        </div>
-      </div>
-      <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>Travel south through Routes 5 & 6 (or the Underground Tunnel) to reach Vermilion City.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Board the SS Anne with your SS Ticket. Battle trainers for XP, then find the Captain on the top deck.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Help the seasick Captain — he gives you <strong>HM01 Cut</strong>. Teach it to a Pokémon immediately.</li>
-        <li class="step"><span class="step-icon">▶</span>The SS Anne departs after you leave. Use Cut to enter Surge's gym.</li>
-        <li class="step boss"><span class="step-icon">🔴</span>Find the two hidden trash cans (one reveals a switch, the second is adjacent) to open Surge's door. Ground-types dominate this fight.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Thunder Badge + TM34 (Shock Wave). Fly HM can now be used outside.</li>
-      </ul>
-      <div class="poke-section-label">🎯 Catch Near Vermilion / Diglett's Cave</div>
-      <div class="pokemon-grid">
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Diglett</span><span class="poke-note">Dig. Cave</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Dugtrio</span><span class="poke-note">Dig. Cave</span></div>
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Ekans</span><span class="poke-note">R4/11</span></div>
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Drowzee</span><span class="poke-note">R11</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Farfetch'd</span><span class="poke-note">Trade for Spearow</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 6 -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">06</span>
-      <span class="section-title">CELADON CITY — GYM 4: ERIKA + TEAM ROCKET HQ</span>
-      <span class="badge-img">🌈</span>
-    </div>
-    <div class="section-body">
-      <div class="gym-leader-bar">
-        <div>
-          <div class="name">ERIKA — RAINBOW BADGE</div>
-          <div class="info">Grass type · Victreebel Lv29 · Tangela Lv24 · Vileplume Lv29</div>
-        </div>
-      </div>
-      <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>Head west through Routes 7 and the Underground Tunnel or Rock Tunnel (use Flash to navigate) from Route 10.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Celadon Game Corner — check behind the Team Rocket poster for a hidden switch to access the Rocket HQ basement.</li>
-        <li class="step"><span class="step-icon">▶</span>Clear the Rocket HQ (4 floors, multiple admins). Fight your way to the boss: <strong>Giovanni</strong>.</li>
-        <li class="step boss"><span class="step-icon">🔴</span>Beat Giovanni in Rocket HQ — he drops the <strong>Silph Scope</strong>. Fire, Ice, and Poison beat Erika.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Rainbow Badge + TM19 (Giga Drain). Strength HM can now be used outside.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Game Corner Prizes: Porygon, Scyther, and Pinsir available here with coins (Scyther is LeafGreen exclusive).</li>
-      </ul>
-      <div class="poke-section-label">🎯 Key Catches — Rock Tunnel & Celadon Area</div>
-      <div class="pokemon-grid">
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Machop</span><span class="poke-note">Rock Tunnel</span></div>
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Onix</span><span class="poke-note">Rock Tunnel</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Scyther</span><span class="poke-note">Game Corner ★</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Pinsir</span><span class="poke-note">Game Corner</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Porygon</span><span class="poke-note">Game Corner ★★</span></div>
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Eevee</span><span class="poke-note">Gift: Celadon</span></div>
-        <div class="poke-card starter"><span class="poke-dot"></span><span class="poke-name">Vaporeon/Jolteon/Flareon</span><span class="poke-note">Evolve Eevee</span></div>
-      </div>
-      <div class="tip-box">💡 Pick up the free <strong>Eevee</strong> from the rooftop of the Celadon Mansion — it's one of the most versatile Pokémon in the game. Decide which Eeveelution you want before evolving.</div>
-    </div>
-  </div>
-
-  <!-- SECTION 7 -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">07</span>
-      <span class="section-title">LAVENDER TOWN — POKÉMON TOWER</span>
+      <span class="section-title">ECRUTEAK CITY — BURNED TOWER + GYM 4: MORTY</span>
       <span class="badge-img">👻</span>
     </div>
     <div class="section-body">
-      <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>Head east to Lavender Town (Routes 8 → 7 → 12, or through Rock Tunnel).</li>
-        <li class="step"><span class="step-icon">▶</span>Enter Pokémon Tower. Without the Silph Scope, you can't identify Ghost-type encounters — get the Scope from Celadon first.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Fight through seven floors of ghosts and Rocket Grunts. You'll encounter the ghost of a Marowak on floor 5 — you cannot catch it, just defeat it.</li>
-        <li class="step boss"><span class="step-icon">🔴</span>Rescue Mr. Fuji from Team Rocket on the top floor. He gives you the <strong>Poké Flute</strong>.</li>
-      </ul>
-      <div class="poke-section-label">🎯 Key Catches — Lavender Town</div>
-      <div class="pokemon-grid">
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Gastly</span><span class="poke-note">Pokémon Tower</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Haunter</span><span class="poke-note">Pokémon Tower</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Cubone</span><span class="poke-note">Pokémon Tower</span></div>
+      <div class="gym-leader-bar">
+        <div class="name">MORTY — FOG BADGE</div>
+        <div class="info">Ghost type · Gastly Lv21 · Haunter Lv21 · Haunter Lv23 · Gengar Lv25</div>
       </div>
-      <div class="tip-box">💡 Gastly/Haunter is a great addition to your team. Haunter evolves into Gengar via trade — if you have a friend to trade with, it's one of the game's best Pokémon.</div>
+      <ul class="steps">
+        <li class="step"><span class="step-icon">▶</span>Head north and east to Ecruteak City. Visit the Burned Tower with your rival Silver.</li>
+        <li class="step key"><span class="step-icon">⭐</span>In the Burned Tower basement, you encounter and awaken the three legendary beasts — <strong>Raikou, Entei, and Suicune</strong> — who flee into the wild.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Meet the <strong>Kimono Girls</strong> in Ecruteak Dance Hall — you'll fight all five throughout the game and they play a role in the endgame legendary encounter.</li>
+        <li class="step boss"><span class="step-icon">🔴</span>Beat Morty. Dark-type moves are super effective, but there are few in Johto early on. Use Psychic or high-attack Normal moves. Gengar is tricky — it's Ghost/Poison.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Fog Badge + TM30 (Shadow Ball). Surf HM accessible now.</li>
+        <li class="step hm"><span class="step-icon">💧</span>Get <strong>HM03 Surf</strong> from the Dance Hall in Ecruteak after beating all Kimono Girls you can access now (some are spread around Johto).</li>
+      </ul>
+      <div class="poke-section-label">🎯 Key Catches — Ecruteak Area</div>
+      <div class="pokemon-grid">
+        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Gastly</span><span class="poke-note">Burned Tower</span></div>
+        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Koffing</span><span class="poke-note">Burned Tower</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Magmar</span><span class="poke-note">Burned Tower ★</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Raikou</span><span class="poke-note">Roaming Johto ★★</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Entei</span><span class="poke-note">Roaming Johto ★★</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Suicune</span><span class="poke-note">Event encounter ★★</span></div>
+      </div>
+      <div class="tip-box">💡 Raikou and Entei roam randomly across Johto. Use a Pokémon with Mean Look to trap them, then put them to sleep and use Ultra Balls. Suicune has a special event encounter at the Pokémon League later.</div>
     </div>
   </div>
 
-  <!-- SECTION 8 -->
+  <!-- 6 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">OLIVINE CITY — LIGHTHOUSE + GYM 6: JASMINE</span>
+      <span class="badge-img">⚙️</span>
+    </div>
+    <div class="section-body">
+      <div class="gym-leader-bar">
+        <div class="name">JASMINE — MINERAL BADGE</div>
+        <div class="info">Steel type · Magnemite Lv30 · Magnemite Lv30 · Steelix Lv35</div>
+      </div>
+      <ul class="steps">
+        <li class="step"><span class="step-icon">▶</span>Head west from Ecruteak to Olivine City (Routes 38/39). Jasmine is at the Lighthouse tending to a sick Pokémon — Ampharos.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Jasmine won't battle until you get medicine from Cianwood City across the sea. Use Surf to cross Route 40/41.</li>
+        <li class="step hm"><span class="step-icon">💧</span>Get <strong>HM02 Fly</strong> from a person in Cianwood City. Beat Chuck's gym while you're there.</li>
+        <li class="step boss"><span class="step-icon">🔴</span>Return medicine to Jasmine. Now she'll battle. Fire and Fighting destroy Steel types — Feraligatr/Croconaw can use Water + Fighting coverage.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Mineral Badge + TM23 (Iron Tail).</li>
+      </ul>
+      <div class="poke-section-label">🎯 Cianwood & Whirl Islands</div>
+      <div class="pokemon-grid">
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Shuckle</span><span class="poke-note">Gift: Cianwood</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Lugia</span><span class="poke-note">Whirl Islands ★★</span></div>
+        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Seel</span><span class="poke-note">Whirl Islands</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Krabby</span><span class="poke-note">R40 surf</span></div>
+      </div>
+      <div class="tip-box">💡 <strong>Lugia</strong> (Lv45) is in the deepest part of Whirl Islands. You need the Silver Wing (given by an old man in Pewter City in Kanto) to encounter it in HeartGold. In SoulSilver it appears without the wing. Bring Ultra Balls and a paralysis/sleep move.</div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <span class="section-title">MAHOGANY TOWN — LAKE OF RAGE + GYM 7: PRYCE + TEAM ROCKET</span>
+      <span class="badge-img">🧊</span>
+    </div>
+    <div class="section-body">
+      <div class="gym-leader-bar">
+        <div class="name">PRYCE — GLACIER BADGE</div>
+        <div class="info">Ice type · Seel Lv27 · Dewgong Lv29 · Piloswine Lv31</div>
+      </div>
+      <ul class="steps">
+        <li class="step"><span class="step-icon">▶</span>Head east from Ecruteak to Mahogany Town (Routes 42/43). A man blocks the gym — first handle the Lake of Rage.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Surf north to the Lake of Rage. A Red Gyarados is creating chaos — catch it (it's a guaranteed shiny!), then meet Lance.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Team up with Lance to raid Team Rocket's hideout in Mahogany Town. Clear three floors of grunts and two executives.</li>
+        <li class="step boss"><span class="step-icon">🔴</span>Beat Pryce. Fire and Fighting work well. Navigate the ice-floor puzzle to reach him.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Glacier Badge + TM72 (Avalanche).</li>
+      </ul>
+      <div class="poke-section-label">🎯 Key Catches</div>
+      <div class="pokemon-grid">
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Red Gyarados</span><span class="poke-note">Lake of Rage ★★</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Gyarados</span><span class="poke-note">Lake of Rage</span></div>
+        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Magikarp</span><span class="poke-note">R43</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Marill</span><span class="poke-note">Mt. Mortar</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Tyrogue</span><span class="poke-note">Gift: Mt. Mortar ★</span></div>
+      </div>
+      <div class="tip-box">💡 The <strong>Red Gyarados</strong> is a guaranteed shiny — use your best Poké Balls and don't let it faint. Tyrogue in Mt. Mortar (gift from a Karate King) evolves into Hitmonlee, Hitmonchan, or Hitmontop depending on its stats.</div>
+    </div>
+  </div>
+
+  <!-- 8 -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">08</span>
-      <span class="section-title">FUCHSIA CITY — GYM 5: KOGA + SAFARI ZONE</span>
-      <span class="badge-img">💜</span>
+      <span class="section-title">GOLDENROD CITY (RETURN) — TEAM ROCKET RADIO TOWER</span>
+      <span class="badge-img">📻</span>
     </div>
     <div class="section-body">
-      <div class="gym-leader-bar">
-        <div>
-          <div class="name">KOGA — SOUL BADGE</div>
-          <div class="info">Poison type · Koffing Lv37 · Muk Lv39 · Koffing Lv37 · Weezing Lv43</div>
-        </div>
-      </div>
       <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>Use the Poké Flute to wake Snorlax blocking Route 12 (south of Lavender) or Route 16 (west of Celadon). Catch it — it's a great team member.</li>
-        <li class="step"><span class="step-icon">▶</span>Head south/west to Fuchsia City. Koga's gym has invisible walls — navigate carefully.</li>
-        <li class="step boss"><span class="step-icon">🔴</span>Beat Koga. His Pokémon use Smokescreen and Toxic — bring Antidotes and status healers. Psychic-types destroy him.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Soul Badge + TM27 (Return). Surf HM can now be used outside.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Safari Zone — north of Fuchsia. Get <strong>HM03 Surf</strong> and <strong>HM04 Strength</strong> from the Warden (give him his Gold Teeth, found in the Zone).</li>
+        <li class="step key"><span class="step-icon">⭐</span>After beating Pryce, Team Rocket takes over Goldenrod's Radio Tower. Head back to the city.</li>
+        <li class="step"><span class="step-icon">▶</span>Infiltrate the Radio Tower (5 floors of grunts). First grab the Basement Key from the Underground Tunnel to enter the Warehouse below.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Clear the Underground Warehouse to get the Card Key, which unlocks doors in the Radio Tower.</li>
+        <li class="step boss"><span class="step-icon">🔴</span>Fight Executive Archer at the top. He uses Houndoom and other Dark types — bring Fighting.</li>
+        <li class="step key"><span class="step-icon">⭐</span>The Director is saved and gives you the <strong>Rainbow Wing</strong> (HG) or <strong>Silver Wing</strong> (SS). This allows you to encounter Ho-Oh or Lugia at their respective locations.</li>
       </ul>
-      <div class="poke-section-label">🎯 Must-Catches — Safari Zone</div>
-      <div class="pokemon-grid">
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Scyther</span><span class="poke-note">Safari ★ (LG)</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Kangaskhan</span><span class="poke-note">Safari ★</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Chansey</span><span class="poke-note">Safari ★★</span></div>
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Nidoran♀/♂</span><span class="poke-note">Safari</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Tauros</span><span class="poke-note">Safari ★★</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Dratini</span><span class="poke-note">Safari fishing ★★</span></div>
-        <div class="poke-card"><span class="poke-dot"></span><span class="poke-name">Snorlax</span><span class="poke-note">R12/R16</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Dragonair</span><span class="poke-note">Safari fishing</span></div>
-      </div>
-      <div class="tip-box">💡 <strong>Dratini</strong> is found by fishing in the Safari Zone with a Super Rod. It evolves into Dragonite — the strongest non-legendary in Gen 1. Highly recommended.</div>
+      <div class="tip-box">💡 This is the major Team Rocket story payoff — their second and final defeat. After this, head to Blackthorn City for the last Johto gym.</div>
     </div>
   </div>
 
-  <!-- SECTION 9 -->
+  <!-- 9 -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">09</span>
-      <span class="section-title">SAFFRON CITY — SILPH CO. + GYM 6: SABRINA</span>
-      <span class="badge-img">🔮</span>
+      <span class="section-title">BLACKTHORN CITY — ICE PATH + GYM 8: CLAIR</span>
+      <span class="badge-img">🐉</span>
     </div>
     <div class="section-body">
       <div class="gym-leader-bar">
-        <div>
-          <div class="name">SABRINA — MARSH BADGE</div>
-          <div class="info">Psychic type · Kadabra Lv38 · Mr. Mime Lv37 · Venomoth Lv38 · Alakazam Lv43</div>
-        </div>
+        <div class="name">CLAIR — RISING BADGE</div>
+        <div class="info">Dragon type · Dragonair Lv37 · Dragonair Lv37 · Dragonair Lv38 · Kingdra Lv41</div>
       </div>
       <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>Head to Saffron City (center of Kanto). Team Rocket has taken over — you can't enter Silph Co. yet without clearing the path.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Navigate Silph Co.'s 11 floors using teleport pads. Find the Card Key on 5F to open all locked doors.</li>
-        <li class="step boss"><span class="step-icon">🔴</span>Rival battle on 7F. Then face Team Rocket admin on top floors. Final boss: <strong>Giovanni</strong> again (Lv45 Persian, Lv42 Rhyhorn, Lv44 Kangaskhan, Lv50 Nidorino, Lv50 Nidoqueen).</li>
-        <li class="step key"><span class="step-icon">⭐</span>After beating Giovanni, the Silph Co. President gives you the <strong>Master Ball</strong> — save it for Mewtwo or a roaming legendary.</li>
-        <li class="step boss"><span class="step-icon">🔴</span>Beat Sabrina. Bug and Ghost types counter Psychic (though Ghost doesn't work in Gen 1 as expected). Dark types aren't in Gen 1 — use high-HP tanky Pokémon.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Marsh Badge + TM04 (Calm Mind). Surf can now pass the water south of the gym area.</li>
+        <li class="step hm"><span class="step-icon">💧</span>Navigate the Ice Path (east of Mahogany) using Strength and Surf. Pick up <strong>HM07 Waterfall</strong> inside.</li>
+        <li class="step boss"><span class="step-icon">🔴</span>Beat Clair — one of the toughest gym leaders. Ice moves hit Dragonair hard but Kingdra only takes neutral damage from Ice and Dragon. Bring your best team (Lv40+).</li>
+        <li class="step key"><span class="step-icon">⭐</span>Clair refuses to give the badge — go to the Dragon's Den to prove yourself. Answer the elder's questions correctly.</li>
+        <li class="step key"><span class="step-icon">⭐</span>Rising Badge + TM59 (Dragon Pulse). The Dragon's Den also has a gift <strong>Dratini</strong> (or Dragonair if you answered perfectly).</li>
       </ul>
-      <div class="poke-section-label">🎯 Key Pokémon Around Saffron</div>
+      <div class="poke-section-label">🎯 Key Catches</div>
       <div class="pokemon-grid">
-        <div class="poke-card starter"><span class="poke-dot"></span><span class="poke-name">Hitmonlee OR Hitmonchan</span><span class="poke-note">Gift: Saffron</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Lapras</span><span class="poke-note">Gift: Silph Co 7F</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Mr. Mime</span><span class="poke-note">Trade on R2</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Jynx</span><span class="poke-note">Ice Path</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Delibird</span><span class="poke-note">Ice Path</span></div>
+        <div class="poke-card starter"><span class="poke-dot"></span><span class="poke-name">Dratini</span><span class="poke-note">Gift: Dragon's Den ★★</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Dragonair</span><span class="poke-note">Dragon's Den surf</span></div>
       </div>
-      <div class="tip-box">💡 The <strong>Lapras</strong> gift on Silph Co. 7F is a powerful Water/Ice Pokémon — a great Surf user for your team. <strong>Hitmonlee vs Hitmonchan</strong>: Lee has higher attack and kick moves; Chan has better special defense and elemental punches.</div>
+      <div class="tip-box">💡 The gift Dratini (or Dragonair) from the Dragon's Den is one of the best Pokémon in the game. Answer all elder's questions with the "good" answers to receive Dragonair instead.</div>
     </div>
   </div>
 
-  <!-- SECTION 10 -->
+  <!-- 10 -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">10</span>
-      <span class="section-title">CINNABAR ISLAND — POKÉMON MANSION + GYM 7: BLAINE</span>
-      <span class="badge-img">🌋</span>
+      <span class="section-title">BELL TOWER / WHIRL ISLANDS — HO-OH & LUGIA</span>
+      <span class="badge-img">🌟</span>
     </div>
     <div class="section-body">
-      <div class="gym-leader-bar">
-        <div>
-          <div class="name">BLAINE — VOLCANO BADGE</div>
-          <div class="info">Fire type · Growlithe Lv42 · Ponyta Lv40 · Rapidash Lv42 · Arcanine Lv47</div>
-        </div>
-      </div>
       <ul class="steps">
-        <li class="step hm"><span class="step-icon">💧</span>Teach Surf and head south from Pallet Town (or west from Fuchsia along Routes 19/20). Surf to Cinnabar Island.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Blaine's Gym is locked — find the <strong>Secret Key</strong> inside the Pokémon Mansion (the burned building north of the gym).</li>
-        <li class="step"><span class="step-icon">▶</span>Navigate the Mansion's 4 floors, reading journals (they detail Mewtwo's creation backstory). The Secret Key is on Basement 1.</li>
-        <li class="step boss"><span class="step-icon">🔴</span>Beat Blaine with Water, Rock, or Ground moves. Arcanine at Lv47 is a tough final hurdle.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Volcano Badge + TM38 (Fire Blast).</li>
-        <li class="step key"><span class="step-icon">⭐</span>Optional: Talk to the scientist in the Lab on Cinnabar for the <strong>Old/Good/Super Rod</strong> upgrades and fossil resurrection (Dome → Kabuto, Helix → Omanyte).</li>
+        <li class="step key"><span class="step-icon">⭐</span>Before the Pokémon League, defeat all 5 <strong>Kimono Girls</strong> (scattered across Johto — Violet, Goldenrod, Ecruteak ×2, Blackthorn). They then gather at the legendary Pokémon's location.</li>
+        <li class="step key"><span class="step-icon">⭐</span><strong>HeartGold:</strong> Kimono Girls summon Ho-Oh at the Bell Tower in Ecruteak. Climb all 10 floors. Ho-Oh is at Lv45.</li>
+        <li class="step key"><span class="step-icon">⭐</span><strong>SoulSilver:</strong> Kimono Girls summon Lugia at Whirl Islands. Navigate to the deepest room. Lugia is at Lv45.</li>
+        <li class="step boss"><span class="step-icon">🔴</span>Battle legendary: bring Ultra Balls, Dusk Balls, and a Pokémon that can paralyze or sleep. False Swipe it to 1 HP first.</li>
       </ul>
-      <div class="poke-section-label">🎯 Key Pokémon — Seafoam Islands (on the way)</div>
       <div class="pokemon-grid">
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Articuno</span><span class="poke-note">Seafoam Islands ★</span></div>
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Seel</span><span class="poke-note">Seafoam</span></div>
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Slowpoke</span><span class="poke-note">R19/20</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Kabuto</span><span class="poke-note">Dome Fossil ★</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Omanyte</span><span class="poke-note">Helix Fossil ★</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Aerodactyl</span><span class="poke-note">Old Amber ★</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Ho-Oh</span><span class="poke-note">Bell Tower (HG) ★★</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Lugia</span><span class="poke-note">Whirl Islands (SS) ★★</span></div>
       </div>
-      <div class="tip-box">💡 <strong>Articuno</strong> is in Seafoam Islands (move boulders into holes with Strength to drop the water level). It's optional but worth grabbing. Use Ultra Balls and freeze/put it to sleep first.</div>
     </div>
   </div>
 
-  <!-- SECTION 11 -->
+  <!-- 11 -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">11</span>
-      <span class="section-title">VIRIDIAN CITY — GYM 8: GIOVANNI</span>
-      <span class="badge-img">🌍</span>
-    </div>
-    <div class="section-body">
-      <div class="gym-leader-bar">
-        <div>
-          <div class="name">GIOVANNI — EARTH BADGE</div>
-          <div class="info">Ground type · Rhyhorn Lv45 · Dugtrio Lv42 · Nidoqueen Lv44 · Nidoking Lv45 · Rhydon Lv50</div>
-        </div>
-      </div>
-      <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>The Viridian Gym is finally open. Navigate the spinning tile floor maze.</li>
-        <li class="step boss"><span class="step-icon">🔴</span>Beat Giovanni — the final Rocket leader. Water, Grass, and Ice moves destroy his Ground team. Rhydon at Lv50 is the real threat.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Earth Badge + TM26 (Earthquake). All HMs can now be used freely.</li>
-        <li class="step"><span class="step-icon">▶</span>Giovanni dissolves Team Rocket after this defeat and flees — ending their criminal organization.</li>
-      </ul>
-      <div class="tip-box">💡 Giovanni is the easiest 8th gym leader in the series if you have a Water or Ice type. Any fully-evolved Water Pokémon (Lapras, Blastoise, Vaporeon) will make this trivial.</div>
-    </div>
-  </div>
-
-  <!-- SECTION 12 -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">12</span>
-      <span class="section-title">VICTORY ROAD + POKÉMON LEAGUE</span>
+      <span class="section-title">VICTORY ROAD + JOHTO ELITE FOUR & LANCE</span>
       <span class="badge-img">🏆</span>
     </div>
     <div class="section-body">
       <ul class="steps">
-        <li class="step"><span class="step-icon">▶</span>Head north through Route 22 → Route 23 → Victory Road. You need all 8 badges to pass the badge checks.</li>
-        <li class="step"><span class="step-icon">▶</span>Victory Road is a 3-floor cave requiring Surf, Strength, and Rock Smash to navigate. Grind heavily here — aim for Lv50–55+ before the Elite Four.</li>
-        <li class="step boss"><span class="step-icon">🔴</span><strong>Lorelei (Ice)</strong> — Dewgong, Cloyster, Slowbro, Jynx, Lapras. Use Electric and Grass moves.</li>
-        <li class="step boss"><span class="step-icon">🔴</span><strong>Bruno (Fighting)</strong> — Onix ×2, Hitmonchan, Hitmonlee, Machamp. Use Psychic and Flying.</li>
-        <li class="step boss"><span class="step-icon">🔴</span><strong>Agatha (Ghost)</strong> — Gengar ×2, Haunter, Arbok, Gengar. Use Psychic and Ground.</li>
-        <li class="step boss"><span class="step-icon">🔴</span><strong>Lance (Dragon)</strong> — Gyarados, Dragonair ×2, Aerodactyl, Dragonite. Ice Beam is the MVP move here.</li>
-        <li class="step boss"><span class="step-icon">🔴</span><strong>Champion: Your Rival</strong> — team varies based on your starter. Levels range from Lv54–65. Have a diverse team ready.</li>
-        <li class="step key"><span class="step-icon">⭐</span>Watch the credits. You're entered into the Hall of Fame!</li>
+        <li class="step"><span class="step-icon">▶</span>Head east from New Bark Town (use Surf) to reach Victory Road. You need all 8 Johto badges.</li>
+        <li class="step"><span class="step-icon">▶</span>Victory Road is short but has strong wild Pokémon. Aim for Lv40–45 before the Elite Four.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Will (Psychic)</strong> — Xatu ×2, Jynx, Slowbro, Exeggutor. Use Dark, Ghost, and Bug moves.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Koga (Poison)</strong> — Ariados, Venomoth, Forretress, Muk, Crobat. Use Ground, Psychic, and Fire.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Bruno (Fighting)</strong> — Hitmontop, Hitmonlee, Hitmonchan, Machamp ×2. Use Psychic and Flying.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Karen (Dark)</strong> — Umbreon, Vileplume, Murkrow, Gengar, Houndoom. Use Fighting and Fairy moves.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Champion Lance (Dragon)</strong> — Gyarados, Dragonite ×3, Aerodactyl, Charizard. Ice Beam is essential. Aim for Lv50+.</li>
       </ul>
-      <div class="poke-section-label">🎯 Key Catches — Victory Road</div>
+      <div class="poke-section-label">🎯 Victory Road Catches</div>
       <div class="pokemon-grid">
-        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Machoke</span><span class="poke-note">Victory Road</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Venomoth</span><span class="poke-note">Victory Road</span></div>
+        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Golbat</span><span class="poke-note">Victory Road</span></div>
         <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Graveler</span><span class="poke-note">Victory Road</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Golbat</span><span class="poke-note">Victory Road</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Donphan</span><span class="poke-note">Victory Road</span></div>
       </div>
-      <div class="tip-box">💡 Stock up on Full Restores and Max Potions before the Elite Four. Bring a Pokémon with Ice Beam for Lance — all four of his dragons are 4× weak to it.</div>
+      <div class="tip-box">💡 Ice Beam (buy from the Goldenrod Dept. Store) will carry you through Lance's entire team. Have at least one fast Ice-type move user going in.</div>
     </div>
   </div>
 
-  <!-- SECTION 13 -->
+  <div class="region-divider">
+    <div class="region-divider-line"></div>
+    <div class="region-divider-label">🔴 KANTO REGION — POST-GAME</div>
+    <div class="region-divider-line"></div>
+  </div>
+
+  <!-- 12 -->
   <div class="section">
     <div class="section-header">
-      <span class="section-num">13</span>
-      <span class="section-title">POST-GAME — CERULEAN CAVE + LEGENDARIES</span>
-      <span class="badge-img">✨</span>
+      <span class="section-num">12</span>
+      <span class="section-title">KANTO — ALL 8 KANTO GYMS</span>
+      <span class="badge-img">🗺️</span>
     </div>
     <div class="section-body">
       <ul class="steps">
-        <li class="step key"><span class="step-icon">⭐</span>Cerulean Cave unlocks after beating the Elite Four. Surf to the entrance north of Cerulean City.</li>
-        <li class="step boss"><span class="step-icon">🔴</span><strong>Mewtwo (Lv70)</strong> waits at the bottom. It's the most powerful Pokémon in the game. Use your Master Ball, or bring max Ultra Balls + sleep/paralyze moves.</li>
-        <li class="step key"><span class="step-icon">⭐</span><strong>Legendary Birds</strong>: Articuno (Seafoam Islands), Zapdos (Power Plant), Moltres (Mt. Ember — post-game, Sevii Islands).</li>
-        <li class="step key"><span class="step-icon">⭐</span>Complete the Sevii Islands questline (accessible after beating the Elite Four via the Tri-Pass and Rainbow Pass). Required to trade with Ruby/Sapphire.</li>
-        <li class="step><span class="step-icon">▶</span>Sevii Islands contain new Pokémon not found in Kanto — Fire Red and Leaf Green exclusive content.</li>
+        <li class="step key"><span class="step-icon">⭐</span>After the credits, you wake up in New Bark Town. Take the ferry from Olivine to Vermilion City, Kanto.</li>
+        <li class="step"><span class="step-icon">▶</span>All 8 Kanto gym leaders are waiting — in any order. Their Pokémon are much higher level (Lv50–70+), so grind before taking them on.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Brock (Rock)</strong> — Graveler Lv52, Rhyhorn Lv54, Omastar Lv55, Onix Lv51, Kabutops Lv53. Water/Grass.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Misty (Water)</strong> — Golduck Lv49, Quagsire Lv49, Lapras Lv52, Starmie Lv54. Electric/Grass.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Lt. Surge (Electric)</strong> — Raichu Lv51, Electrode ×2 Lv47/53, Magneton Lv51, Electabuzz Lv53. Ground.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Erika (Grass)</strong> — Jumpluff Lv51, Tangela Lv46, Victreebel Lv46, Bellossom Lv46. Fire/Ice/Flying.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Janine (Poison)</strong> — Crobat Lv53, Weezing Lv51, Ariados Lv47, Venomoth Lv50, Weezing Lv53. Ground/Psychic.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Sabrina (Psychic)</strong> — Espeon Lv58, Mr. Mime Lv53, Alakazam Lv55, Jynx Lv57. Dark/Ghost/Bug.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Blaine (Fire)</strong> — Magcargo Lv54, Rapidash Lv52, Magmar Lv54. Water/Rock/Ground.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>Blue (Mixed)</strong> — Pidgeot Lv58, Rhydon Lv58, Arcanine Lv58, Exeggutor Lv58, Gyarados Lv58, Alakazam Lv58. Varied — bring your best team.</li>
       </ul>
-      <div class="poke-section-label">🎯 Legendary Pokémon</div>
+      <div class="poke-section-label">🎯 Key Kanto Pokémon to Watch For</div>
       <div class="pokemon-grid">
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Abra</span><span class="poke-note">R24/25</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Chansey</span><span class="poke-note">Safari Zone</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Tauros</span><span class="poke-note">Safari Zone</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Kangaskhan</span><span class="poke-note">Safari Zone</span></div>
+        <div class="poke-card uncommon"><span class="poke-dot"></span><span class="poke-name">Snorlax</span><span class="poke-note">R12/R16 (PokeFlute)</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Electabuzz</span><span class="poke-note">Power Plant</span></div>
+        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Magmar</span><span class="poke-note">Cinnabar area</span></div>
+      </div>
+      <div class="tip-box">💡 The Kanto Safari Zone is customizable in HGSS — place objects to attract specific Pokémon. You'll need to wait in-game days for the areas to unlock, but rare Pokémon like Chansey and Tauros are worth it.</div>
+    </div>
+  </div>
+
+  <!-- 13 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">13</span>
+      <span class="section-title">MT. SILVER — RED (THE TRUE FINAL BOSS)</span>
+      <span class="badge-img">🔥</span>
+    </div>
+    <div class="section-body">
+      <ul class="steps">
+        <li class="step key"><span class="step-icon">⭐</span>After collecting all 16 badges (8 Johto + 8 Kanto), Professor Oak gives you access to Mt. Silver via Route 28.</li>
+        <li class="step"><span class="step-icon">▶</span>Mt. Silver is a brutal optional dungeon. Wild Pokémon are Lv40–60+. Grind extensively — you want Lv70–80 for the final boss.</li>
+        <li class="step boss"><span class="step-icon">🔴</span><strong>RED</strong> — the true final boss and one of the hardest fights in all of Pokémon. He does not speak.</li>
+      </ul>
+      <div class="poke-section-label">🔴 Red's Team</div>
+      <div class="pokemon-grid">
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Pikachu</span><span class="poke-note">Lv88 ★★★</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Lapras</span><span class="poke-note">Lv80</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Snorlax</span><span class="poke-note">Lv82</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Charizard</span><span class="poke-note">Lv84</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Blastoise</span><span class="poke-note">Lv84</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Venusaur</span><span class="poke-note">Lv84</span></div>
+      </div>
+      <div class="tip-box">💡 Red's Pikachu opens with Light Ball-boosted Thunder — it hits incredibly hard. Lead with a Ground-type to absorb it. Bring max Revives and Full Restores. This is the hardest battle in the main series — be at Lv75+ minimum.</div>
+    </div>
+  </div>
+
+  <!-- 14 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">14</span>
+      <span class="section-title">LEGENDARY CHECKLIST</span>
+      <span class="badge-img">✨</span>
+    </div>
+    <div class="section-body">
+      <div class="pokemon-grid">
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Ho-Oh</span><span class="poke-note">Bell Tower (HG) Lv45</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Lugia</span><span class="poke-note">Whirl Islands (SS) Lv45</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Raikou</span><span class="poke-note">Roaming Johto</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Entei</span><span class="poke-note">Roaming Johto</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Suicune</span><span class="poke-note">Johto (story event)</span></div>
         <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Mewtwo</span><span class="poke-note">Cerulean Cave Lv70</span></div>
         <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Articuno</span><span class="poke-note">Seafoam Islands</span></div>
         <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Zapdos</span><span class="poke-note">Power Plant</span></div>
-        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Moltres</span><span class="poke-note">Mt. Ember (Sevii)</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Moltres</span><span class="poke-note">Mt. Silver</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Kyogre / Groudon</span><span class="poke-note">Embedded Tower ★</span></div>
+        <div class="poke-card legendary"><span class="poke-dot"></span><span class="poke-name">Latias / Latios</span><span class="poke-note">Roaming Kanto ★</span></div>
       </div>
-      <div class="poke-section-label">🎯 Sevii Island Exclusives (LeafGreen)</div>
-      <div class="pokemon-grid">
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Slowpoke</span><span class="poke-note">4 Island</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Exeggcute</span><span class="poke-note">Sevii Islands</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Oddish</span><span class="poke-note">3 Island</span></div>
-        <div class="poke-card rare"><span class="poke-dot"></span><span class="poke-name">Marowak</span><span class="poke-note">Mt. Ember area</span></div>
-      </div>
-      <div class="tip-box">💡 Save your <strong>Master Ball</strong> for Mewtwo. The three legendary birds can be caught with Ultra Balls if you bring lots of them and a Pokémon that can paralyze or put them to sleep.</div>
+      <div class="tip-box">💡 Kyogre (SS) and Groudon (HG) require the Blue/Red Orb from Mr. Pokémon after beating Red. Latias/Latios roam Kanto after an in-game TV event. Mewtwo is in Cerulean Cave — save your Master Ball or bring tons of Ultra/Dusk Balls.</div>
     </div>
   </div>
 
 </main>
 
 <footer>
-  POKÉMON LEAFGREEN — GBA 2004 · Total Pokémon Available: 386 (with trades/Sevii) · Made with ❤
+  POKÉMON HEARTGOLD / SOULSILVER — Nintendo DS 2010 · 16 Badges · 2 Regions · True Final Boss: Red
 </footer>
 
 </body>
